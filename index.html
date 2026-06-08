@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretrizes Científicas de Treino</title>
+    <!-- Google Fonts: Outfit (modern geometric sans) e Inter (highly readable UI font) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: rgba(30, 41, 59, 0.65);
+            --border-color: rgba(255, 255, 255, 0.08);
+            
+            /* Curated Neon Palette */
+            --cyan: #06b6d4;
+            --cyan-glow: rgba(6, 182, 212, 0.15);
+            --emerald: #10b981;
+            --emerald-glow: rgba(16, 185, 129, 0.15);
+            --orange: #f59e0b;
+            --orange-glow: rgba(245, 158, 11, 0.15);
+            --purple: #8b5cf6;
+            --purple-glow: rgba(139, 92, 246, 0.15);
+            --red: #ef4444;
+            --red-glow: rgba(239, 68, 68, 0.15);
+            
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-highlight: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(6, 182, 212, 0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.08) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, rgba(16, 185, 129, 0.05) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* HEADER */
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            animation: fadeInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, #38bdf8, #818cf8, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        header .badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            margin-bottom: 1rem;
+        }
+
+        /* INFOGRAPHIC GRID */
+        .infographic-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.75rem;
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+        }
+
+        @media (max-width: 768px) {
+            .infographic-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* CARD STYLE */
+        .card {
+            background-color: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            height: 310px;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        /* Card themes and shadows on hover */
+        .card.theme-cyan {
+            border-left: 4px solid var(--cyan);
+        }
+        .card.theme-cyan:hover {
+            border-color: var(--cyan);
+            box-shadow: 0 10px 30px -10px var(--cyan-glow);
+            transform: translateY(-4px);
+        }
+
+        .card.theme-emerald {
+            border-left: 4px solid var(--emerald);
+        }
+        .card.theme-emerald:hover {
+            border-color: var(--emerald);
+            box-shadow: 0 10px 30px -10px var(--emerald-glow);
+            transform: translateY(-4px);
+        }
+
+        .card.theme-orange {
+            border-left: 4px solid var(--orange);
+        }
+        .card.theme-orange:hover {
+            border-color: var(--orange);
+            box-shadow: 0 10px 30px -10px var(--orange-glow);
+            transform: translateY(-4px);
+        }
+
+        .card.theme-purple {
+            border-left: 4px solid var(--purple);
+        }
+        .card.theme-purple:hover {
+            border-color: var(--purple);
+            box-shadow: 0 10px 30px -10px var(--purple-glow);
+            transform: translateY(-4px);
+        }
+
+        /* Card Content */
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .card-icon {
+            width: 2.75rem;
+            height: 2.75rem;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .theme-cyan .card-icon { background: rgba(6, 182, 212, 0.1); color: var(--cyan); }
+        .theme-emerald .card-icon { background: rgba(16, 185, 129, 0.1); color: var(--emerald); }
+        .theme-orange .card-icon { background: rgba(245, 158, 11, 0.1); color: var(--orange); }
+        .theme-purple .card-icon { background: rgba(139, 92, 246, 0.1); color: var(--purple); }
+
+        .card-title-group h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        .theme-cyan h2 { color: var(--cyan); }
+        .theme-emerald h2 { color: var(--emerald); }
+        .theme-orange h2 { color: var(--orange); }
+        .theme-purple h2 { color: var(--purple); }
+
+        .card-title-group p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.15rem;
+        }
+
+        .card-body {
+            overflow-y: auto;
+            flex: 1;
+            padding-right: 0.5rem;
+        }
+
+        .card-body::-webkit-scrollbar {
+            width: 5px;
+        }
+        .card-body::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .card-body::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 9999px;
+        }
+        .card-body::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .card-body ul {
+            list-style: none;
+        }
+
+        .card-body li {
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--text-highlight);
+            margin-bottom: 0.85rem;
+        }
+
+        .card-body li:last-child {
+            margin-bottom: 0;
+        }
+
+        .card-body li::before {
+            content: "•";
+            position: absolute;
+            left: 0.25rem;
+            font-size: 1.15rem;
+            font-weight: bold;
+        }
+        .theme-cyan .card-body li::before { color: var(--cyan); }
+        .theme-emerald .card-body li::before { color: var(--emerald); }
+        .theme-orange .card-body li::before { color: var(--orange); }
+        .theme-purple .card-body li::before { color: var(--purple); }
+
+        /* INTERACTIVE PSE SECTION */
+        .interactive-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.25rem;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(16px);
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.35rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Range Slider and Scales */
+        .scale-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Thermometer Visual Guide */
+        .thermometer-container {
+            width: 100%;
+            max-width: 650px;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-top: 1rem;
+        }
+
+        .thermometer-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 9999px;
+            position: relative;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+
+        /* Active highlight for thermometer bar zone */
+        .thermometer-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: var(--thermometer-fill, 70%);
+            background: linear-gradient(to right, var(--cyan) 0%, var(--emerald) 35%, var(--orange) 70%, var(--red) 100%);
+            border-radius: 9999px;
+            transition: width 0.15s ease;
+        }
+
+        .zone-indicators {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            position: relative;
+        }
+
+        .zone-indicator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 110px;
+            text-align: center;
+            opacity: 0.35;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .zone-indicator:hover {
+            opacity: 0.7;
+        }
+
+        .zone-indicator.active {
+            opacity: 1;
+            transform: translateY(-6px);
+        }
+
+        .zone-icon {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            transition: all 0.3s ease;
+        }
+
+        .zone-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: var(--text-muted);
+            transition: all 0.3s ease;
+        }
+
+        /* Active classes by zone color */
+        .zone-indicator.active[data-zone="low"] .zone-icon {
+            background: rgba(6, 182, 212, 0.15);
+            border-color: var(--cyan);
+            color: var(--cyan);
+            box-shadow: 0 0 15px var(--cyan-glow);
+        }
+        .zone-indicator.active[data-zone="low"] .zone-label {
+            color: var(--cyan);
+        }
+
+        .zone-indicator.active[data-zone="easy"] .zone-icon {
+            background: rgba(6, 182, 212, 0.15);
+            border-color: var(--cyan);
+            color: var(--cyan);
+            box-shadow: 0 0 15px var(--cyan-glow);
+        }
+        .zone-indicator.active[data-zone="easy"] .zone-label {
+            color: var(--cyan);
+        }
+
+        .zone-indicator.active[data-zone="med"] .zone-icon {
+            background: rgba(16, 185, 129, 0.15);
+            border-color: var(--emerald);
+            color: var(--emerald);
+            box-shadow: 0 0 15px var(--emerald-glow);
+        }
+        .zone-indicator.active[data-zone="med"] .zone-label {
+            color: var(--emerald);
+        }
+
+        .zone-indicator.active[data-zone="target"] .zone-icon {
+            background: rgba(245, 158, 11, 0.15);
+            border-color: var(--orange);
+            color: var(--orange);
+            box-shadow: 0 0 18px var(--orange-glow);
+        }
+        .zone-indicator.active[data-zone="target"] .zone-label {
+            color: var(--orange);
+        }
+
+        .zone-indicator.active[data-zone="high"] .zone-icon {
+            background: rgba(239, 68, 68, 0.15);
+            border-color: var(--red);
+            color: var(--red);
+            box-shadow: 0 0 15px var(--red-glow);
+        }
+        .zone-indicator.active[data-zone="high"] .zone-label {
+            color: var(--red);
+        }
+
+        /* Custom Slider Styling */
+        .slider-wrapper {
+            width: 100%;
+            max-width: 650px;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .pse-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 10px;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.08);
+            outline: none;
+            margin: 1.5rem 0;
+            cursor: pointer;
+            position: relative;
+            transition: background 0.15s ease;
+        }
+        
+        /* Webkit Browser Support */
+        .pse-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+            transition: transform 0.1s ease;
+            border: 4px solid var(--thumb-border-color, var(--orange));
+            box-shadow: 0 0 15px var(--thumb-glow-color, var(--orange-glow));
+        }
+        
+        .pse-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.15);
+        }
+
+        .pse-slider::-webkit-slider-thumb:active {
+            transform: scale(0.95);
+        }
+
+        /* Firefox Support */
+        .pse-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+            transition: transform 0.1s ease;
+            border: 4px solid var(--thumb-border-color, var(--orange));
+            box-shadow: 0 0 15px var(--thumb-glow-color, var(--orange-glow));
+        }
+
+        .pse-slider::-moz-range-thumb:hover {
+            transform: scale(1.15);
+        }
+
+        .pse-slider::-moz-range-thumb:active {
+            transform: scale(0.95);
+        }
+
+        /* Ticks labels */
+        .slider-ticks {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 5px;
+            margin-top: -5px;
+        }
+
+        .slider-ticks span {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 20px;
+            text-align: center;
+            user-select: none;
+        }
+
+        .slider-ticks span.active {
+            color: var(--text-main);
+            transform: scale(1.3);
+            font-weight: 800;
+        }
+        
+        /* Make tick colors match their zone when active */
+        .slider-ticks span.active.lvl-low { color: var(--cyan); text-shadow: 0 0 8px var(--cyan-glow); }
+        .slider-ticks span.active.lvl-med { color: var(--emerald); text-shadow: 0 0 8px var(--emerald-glow); }
+        .slider-ticks span.active.lvl-target { color: var(--orange); text-shadow: 0 0 10px var(--orange-glow); }
+        .slider-ticks span.active.lvl-high { color: var(--red); text-shadow: 0 0 8px var(--red-glow); }
+
+        /* Detail Display */
+        .detail-display {
+            width: 100%;
+            background: rgba(11, 15, 25, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 1rem;
+            padding: 1.75rem;
+            min-height: 140px;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .detail-tag {
+            align-self: flex-start;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+
+        .tag-low { background: rgba(6, 182, 212, 0.1); color: var(--cyan); border: 1px solid rgba(6, 182, 212, 0.2); }
+        .tag-med { background: rgba(16, 185, 129, 0.1); color: var(--emerald); border: 1px solid rgba(16, 185, 129, 0.2); }
+        .tag-target { background: rgba(245, 158, 11, 0.15); color: var(--orange); border: 1px solid rgba(245, 158, 11, 0.3); animation: pulseGlow 2s infinite; }
+        .tag-high { background: rgba(239, 68, 68, 0.1); color: var(--red); border: 1px solid rgba(239, 68, 68, 0.2); }
+
+        .detail-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .detail-text {
+            font-size: 0.95rem;
+            color: var(--text-highlight);
+            line-height: 1.5;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+            animation: fadeIn 1s ease 0.3s both;
+        }
+
+        footer p {
+            margin-bottom: 0.25rem;
+        }
+
+        /* KEYFRAMES ANIMATION */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.2); }
+            70% { box-shadow: 0 0 0 8px rgba(245, 158, 11, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- HEADER -->
+        <header>
+            <span class="badge">Consenso ACSM 2026</span>
+            <h1>Instruções para seleção de carga no treinamento</h1>
+            <p>Infográfico interativo para seleção do esforço subjetivamente percebido por você</p>
+        </header>
+
+        <!-- INFOGRAPHIC GRID -->
+        <div class="infographic-grid">
+            
+            <!-- CARD 1: Faixas de Execução -->
+            <div class="card theme-cyan">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/>
+                        </svg>
+                    </div>
+                    <div class="card-title-group">
+                        <h2>1. Faixas de Execução</h2>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Intervalos de Repetição:</strong> Substitua as repetições fixas (ex: 3x10) por faixas flexíveis (ex: de 6 a 15 repetições).</li>
+                        <li><strong>Estabelecimento de um Norte:</strong> A faixa dá flexibilidade, agindo como limite mínimo e máximo.</li>
+                        <li><strong>O Músculo Não Conta:</strong> Nós usamos os números pra ter uma certa noção. Mas, tirando isso, o que o músculo percebe é a tradução desses números em leve-moderado-difícil.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CARD 2: Hipertrofia & Esforço -->
+            <div class="card theme-emerald">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
+                        </svg>
+                    </div>
+                    <div class="card-title-group">
+                        <h2>2. Hipertrofia & Esforço</h2>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Ampla Zona de Carga:</strong> O ganho ocorre de forma praticamente idêntica em cargas de 30% a 100% (segundo os últimos consensos científicos de qualidade da área) da sua capacidade máxima de força.</li>
+                        <li><strong>Grau de Esforço Alto:</strong> O fator crucial para a eficácia do treino é a intensidade de ESFORÇO ser elevada em cada série, ou seja, o movimento começa fácil e dificulta do meio para o final de forma INVOLUNTÁRIA.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CARD 3: Execução & Segurança -->
+            <div class="card theme-orange">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+                        </svg>
+                    </div>
+                    <div class="card-title-group">
+                        <h2>3. Execução & Segurança</h2>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Padrão:</strong> Priorize cargas desafiadoras, mas que te permitam manter o padrão de movimento esperado para aquele exercício (empurre/puxe o peso de forma controlada e solte o peso também de forma controlada, de forma que você não simplesmente "largue" o peso de volta).</li>
+                        <li><strong>Postura:</strong> Por exemplo, não é esperado que você balance o ombro para ajudar a jogar o peso para cima numa série de rosca direta, o trabalho nesse exemplo deve se limitar ao máximo da musculatura alvo (o bíceps).</li>
+                        <li><strong>Fadiga Involuntária:</strong> Continue a série até que a subida ou empurrão do peso fique involuntariamente (não é para fazer "lentinho" propositalmente) mais lenta.</li>
+                        <li><strong>Proximidade da Falha:</strong> Pare a série próximo ao limite da capacidade física (1 a 2 repetições antes de falhar de fato, isso aqui você descobre treinando, pode escolher um dia bem alimentado, descansado e disposto para testar um exercício até a falha concêntrica, que é quando não se consegue mais empurrar ou puxar o peso, aí você terá uma noção aproximada de onde é seu máximo).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CARD 4: Percepção Subjetiva de Esforço (PSE) -->
+            <div class="card theme-purple">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <div class="card-title-group">
+                        <h2>4. Percepção Subjetiva de Esforço (PSE)</h2>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Cargas Mais Pesadas:</strong> Visando otimizar tempo, já que se consegue o mesmo com 30 a 100% da carga máxima, pesos numa faixa de 6 a 8 da PERCEPÇÃO SUBJETIVA de esforço são ideais pois invariavelmente vão fazer suas séries ter por volta de 6 a 15 reps.</li>
+                        <li><strong>Menos Tempo no Treino:</strong> Usar cargas moderadas-altas encurta a duração das séries para atingir o mesmo estímulo de hipertrofia.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- INTERACTIVE PSE SECTION -->
+        <div class="interactive-section">
+            <div class="section-header">
+                <h2>Seletor de Percepção Subjetiva de Esforço (PSE)</h2>
+                <p>(Clique aqui para ver uma explicação didática sobre o que cada nível de esforço nessa escala representa)</p>
+            </div>
+            
+            <div class="scale-container">
+                <!-- Visual Thermometer Guide -->
+                <div class="thermometer-container">
+                    <div class="thermometer-bar"></div>
+                    <div class="zone-indicators">
+                        <!-- Muito Fácil -->
+                        <div class="zone-indicator" data-zone="low">
+                            <div class="zone-icon">
+                                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 17h12l5-5" />
+                                    <circle cx="9" cy="9" r="2" />
+                                    <path d="M9 11l4 2 3 4" />
+                                    <path d="M10 11.5l2 1" />
+                                </svg>
+                            </div>
+                            <span class="zone-label">Muito Fácil</span>
+                        </div>
+                        <!-- Fácil -->
+                        <div class="zone-indicator" data-zone="easy">
+                            <div class="zone-icon">
+                                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="5" r="2.5" />
+                                    <path d="M12 7.5v7M9 21.5l3-7 3 7" />
+                                    <path d="M12 9.5H9.5l-1 2" />
+                                    <path d="M12 8.5h3.5v-3.5" />
+                                    <circle cx="15.5" cy="5" r="1" fill="currentColor" />
+                                </svg>
+                            </div>
+                            <span class="zone-label">Fácil</span>
+                        </div>
+                        <!-- Moderado -->
+                        <div class="zone-indicator" data-zone="med">
+                            <div class="zone-icon">
+                                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="5" r="2.5" />
+                                    <path d="M12 7.5v7M9 21.5l3-7 3 7" />
+                                    <path d="M7 11.5h10" />
+                                    <path d="M12 7.5l-3 4M12 7.5l3 4" />
+                                    <circle cx="6" cy="11.5" r="2" fill="currentColor" />
+                                    <circle cx="18" cy="11.5" r="2" fill="currentColor" />
+                                </svg>
+                            </div>
+                            <span class="zone-label">Moderado</span>
+                        </div>
+                        <!-- Difícil -->
+                        <div class="zone-indicator" data-zone="target">
+                            <div class="zone-icon">
+                                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="11" cy="7" r="2.5" />
+                                    <path d="M11 9.5l-3 3.5 3.5 4-2 4.5" />
+                                    <path d="M8 13L6 17.5" />
+                                    <path d="M9 10L6 9M13 10l3-1" />
+                                    <path d="M3 9h18" />
+                                    <circle cx="4" cy="9" r="2.5" fill="currentColor" />
+                                    <circle cx="5.2" cy="9" r="2" fill="currentColor" />
+                                    <circle cx="20" cy="9" r="2.5" fill="currentColor" />
+                                    <circle cx="18.8" cy="9" r="2" fill="currentColor" />
+                                </svg>
+                            </div>
+                            <span class="zone-label">Difícil</span>
+                        </div>
+                        <!-- Muito Difícil -->
+                        <div class="zone-indicator" data-zone="high">
+                            <div class="zone-icon">
+                                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="10" cy="9" r="2.5" />
+                                    <path d="M10 11.5l-3 2.5v5l-2.5 3" />
+                                    <path d="M7 14l-1.5 4.5" />
+                                    <path d="M8 12.5L5.5 17.5" />
+                                    <path d="M1 18c3-3.5 12-3.5 16 0.5" />
+                                    <circle cx="1" cy="18" r="3.2" fill="currentColor" />
+                                    <circle cx="2" cy="17.5" r="2.8" fill="currentColor" />
+                                    <circle cx="3" cy="17" r="2.4" fill="currentColor" />
+                                    <circle cx="17" cy="18.5" r="3.2" fill="currentColor" />
+                                    <circle cx="16" cy="18" r="2.8" fill="currentColor" />
+                                    <circle cx="15" cy="17.5" r="2.4" fill="currentColor" />
+                                    <path d="M11 5.5l1.5-1M13 7l1.5-.5" stroke-width="1.5" />
+                                </svg>
+                            </div>
+                            <span class="zone-label">Muito Difícil</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-wrapper">
+                    <input type="range" id="pseSlider" min="0" max="10" step="1" value="7" class="pse-slider">
+                    <div class="slider-ticks">
+                        <span data-val="0">0</span>
+                        <span data-val="1">1</span>
+                        <span data-val="2">2</span>
+                        <span data-val="3">3</span>
+                        <span data-val="4">4</span>
+                        <span data-val="5">5</span>
+                        <span data-val="6">6</span>
+                        <span data-val="7">7</span>
+                        <span data-val="8">8</span>
+                        <span data-val="9">9</span>
+                        <span data-val="10">10</span>
+                    </div>
+                </div>
+
+                <div class="detail-display" id="detailDisplay">
+                    <span class="detail-tag tag-target" id="detailTag">Difícil (Recomendado)</span>
+                    <h3 class="detail-title" id="detailTitle">PSE 7 - Difícil</h3>
+                    <p class="detail-text" id="detailText">A carga desafia significativamente o músculo e a fadiga é aparente próximo ao final da série.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>Diretrizes baseadas em evidências (Consenso do Colégio Americano de Medicina Esportiva 2026)</p>
+            <p>Google Workspace Integration • © 2026</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPT -->
+    <script>
+        const pseData = {
+            '0': {
+                tag: 'Muito Leve',
+                class: 'tag-low',
+                title: 'PSE 0 - Absurdamente Fácil',
+                text: 'Sem esforço ativo.'
+            },
+            '1': {
+                tag: 'Muito Leve',
+                class: 'tag-low',
+                title: 'PSE 1 - Extremamente Fácil',
+                text: 'Carga quase imperceptível.'
+            },
+            '2': {
+                tag: 'Leve',
+                class: 'tag-low',
+                title: 'PSE 2 - Muito Fácil',
+                text: 'Carga leve.'
+            },
+            '3': {
+                tag: 'Leve',
+                class: 'tag-low',
+                title: 'PSE 3 - Fácil',
+                text: 'Carga baixa. Começo de séries preparatórias ou circuitos de baixa intensidade.'
+            },
+            '4': {
+                tag: 'Moderado',
+                class: 'tag-med',
+                title: 'PSE 4 - Moderado Inicial',
+                text: 'Carga leve-moderada. Esforço perceptível, mas que permite execução contínua com pouca ou nenhuma fadiga.'
+            },
+            '5': {
+                tag: 'Moderado',
+                class: 'tag-med',
+                title: 'PSE 5 - Moderado',
+                text: 'Carga intermediária. Esforço médio percebido no final da série, mas ainda sem fadiga aparente.'
+            },
+            '6': {
+                tag: 'Difícil (Recomendado)',
+                class: 'tag-target',
+                title: 'PSE 6 - Moderadamente Difícil',
+                text: 'Início da zona alvo recomendada para eficiência prática. O peso já se mostra desafiador e exige concentração.'
+            },
+            '7': {
+                tag: 'Difícil (Recomendado)',
+                class: 'tag-target',
+                title: 'PSE 7 - Difícil',
+                text: 'A carga desafia significativamente o músculo e a fadiga é aparente próximo ao final da série.'
+            },
+            '8': {
+                tag: 'Difícil (Recomendado)',
+                class: 'tag-target',
+                title: 'PSE 8 - Muito Difícil',
+                text: 'Limite superior recomendado da zona de trabalho eficiente.'
+            },
+            '9': {
+                tag: 'Alta Intensidade',
+                class: 'tag-high',
+                title: 'PSE 9 - Extremamente Difícil',
+                text: 'Muito próximo à falha muscular absoluta (cerca de 1 repetição de reserva). Alto estresse metabólico e fadiga neurológica elevada.'
+            },
+            '10': {
+                tag: 'Exaustão',
+                class: 'tag-high',
+                title: 'PSE 10 - Exaustão Máxima',
+                text: 'Ponto onde não há mais possibilidade de continuar realizando esforço.'
+            }
+        };
+
+        const slider = document.getElementById('pseSlider');
+        const tickSpans = document.querySelectorAll('.slider-ticks span');
+        const zoneIndicators = document.querySelectorAll('.zone-indicator');
+        const detailTag = document.getElementById('detailTag');
+        const detailTitle = document.getElementById('detailTitle');
+        const detailText = document.getElementById('detailText');
+
+        const colorMap = {
+            '0': { color: '#06b6d4', glow: 'rgba(6, 182, 212, 0.4)', levelClass: 'lvl-low' },
+            '1': { color: '#06b6d4', glow: 'rgba(6, 182, 212, 0.4)', levelClass: 'lvl-low' },
+            '2': { color: '#06b6d4', glow: 'rgba(6, 182, 212, 0.4)', levelClass: 'lvl-low' },
+            '3': { color: '#06b6d4', glow: 'rgba(6, 182, 212, 0.4)', levelClass: 'lvl-low' },
+            '4': { color: '#10b981', glow: 'rgba(16, 185, 129, 0.4)', levelClass: 'lvl-med' },
+            '5': { color: '#10b981', glow: 'rgba(16, 185, 129, 0.4)', levelClass: 'lvl-med' },
+            '6': { color: '#f59e0b', glow: 'rgba(245, 158, 11, 0.5)', levelClass: 'lvl-target' },
+            '7': { color: '#f59e0b', glow: 'rgba(245, 158, 11, 0.5)', levelClass: 'lvl-target' },
+            '8': { color: '#f59e0b', glow: 'rgba(245, 158, 11, 0.5)', levelClass: 'lvl-target' },
+            '9': { color: '#ef4444', glow: 'rgba(239, 68, 68, 0.4)', levelClass: 'lvl-high' },
+            '10': { color: '#ef4444', glow: 'rgba(239, 68, 68, 0.4)', levelClass: 'lvl-high' }
+        };
+
+        function updateDisplay(val) {
+            const info = pseData[val];
+            const colors = colorMap[val];
+            
+            // Update display card
+            detailTag.className = `detail-tag ${info.class}`;
+            detailTag.textContent = info.tag;
+            detailTitle.textContent = info.title;
+            detailText.textContent = info.text;
+
+            // Update slider custom properties (for thumb border and glow)
+            slider.style.setProperty('--thumb-border-color', colors.color);
+            slider.style.setProperty('--thumb-glow-color', colors.glow);
+
+            // Update track background gradient
+            const percent = (val / 10) * 100;
+            slider.style.background = `linear-gradient(to right, ${colors.color} 0%, ${colors.color} ${percent}%, rgba(255, 255, 255, 0.08) ${percent}%, rgba(255, 255, 255, 0.08) 100%)`;
+
+            // Update thermometer bar active filling
+            document.querySelector('.thermometer-bar').style.setProperty('--thermometer-fill', `${percent}%`);
+            
+            // Update ticks highlighting
+            tickSpans.forEach((span, idx) => {
+                span.className = ''; // reset
+                if (idx == val) {
+                    span.classList.add('active', colors.levelClass);
+                }
+            });
+
+            // Determine active zone index
+            let activeZoneIndex = 0;
+            if (val <= 1) activeZoneIndex = 0;      // Muito Fácil
+            else if (val <= 3) activeZoneIndex = 1; // Fácil
+            else if (val <= 5) activeZoneIndex = 2; // Moderado
+            else if (val <= 8) activeZoneIndex = 3; // Difícil
+            else activeZoneIndex = 4;               // Muito Difícil
+            
+            // Update zone indicators active state
+            zoneIndicators.forEach((ind, idx) => {
+                if (idx === activeZoneIndex) {
+                    ind.classList.add('active');
+                } else {
+                    ind.classList.remove('active');
+                }
+            });
+        }
+
+        // Listen for slider inputs (during drag)
+        slider.addEventListener('input', (e) => {
+            updateDisplay(e.target.value);
+        });
+
+        // Listen for clicks on ticks
+        tickSpans.forEach(span => {
+            span.addEventListener('click', () => {
+                const val = span.getAttribute('data-val');
+                slider.value = val;
+                updateDisplay(val);
+            });
+        });
+
+        // Listen for clicks on zone indicators
+        zoneIndicators.forEach((ind, idx) => {
+            ind.addEventListener('click', () => {
+                const defaults = [1, 3, 5, 7, 10]; // Sensible default PSE for each zone
+                const targetVal = defaults[idx];
+                slider.value = targetVal;
+                updateDisplay(targetVal);
+            });
+        });
+
+        // Set default value (7)
+        updateDisplay(7);
+    </script>
+</body>
+</html>
